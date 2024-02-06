@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Pablo
+apellido: Jesus
 ---
 TP: Iluminación
 ---
@@ -43,6 +43,31 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
+        cantidad = int(self.combobox_cantidad.get())
+        marca = self.combobox_marca.get()
+        subtotal=1
+        match(cantidad, marca):
+            case(1|2, _):
+                subtotal=cantidad*800
+            case(3, "ArgentinaLuz"):
+                subtotal=cantidad*800*0.85
+            case(3, "FelipeLamparas"):
+                subtotal=cantidad*800*0.9
+            case(3, _):
+                subtotal=cantidad*800*0.95
+            case(4,"ArgentinaLuz"|"FelipeLamparas"):
+                subtotal=cantidad*800*0.75
+            case(4,_):
+                subtotal=cantidad*800*0.8
+            case (5, "ArgentinaLuz"):
+                subtotal=cantidad*800*0.6
+            case(5, _):
+                subtotal=cantidad*800*0.7
+            case(_,_):
+                subtotal=cantidad*400
+        if(subtotal >= 4000):
+            subtotal=cantidad*800*0.45
+        alert(title="Total", message="El total de su compra es: " + str(subtotal))
         pass
         
     

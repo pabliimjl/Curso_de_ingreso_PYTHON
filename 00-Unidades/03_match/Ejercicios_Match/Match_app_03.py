@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Pablo 
+apellido: Jesus
 ---
 Ejercicio: Match_03
 ---
@@ -38,6 +38,12 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
+        mes = self.combobox_mes.get()
+        match (mes):
+            case "Febrero":
+                alert(title="Hay ñoquis cada 4 años :c", message="Este mes no tiene mas de 29 dias")
+            case _:
+                alert(title="Siempre hay ñoquis", message="Este mes tiene 30 días o mas")
         pass
     
     

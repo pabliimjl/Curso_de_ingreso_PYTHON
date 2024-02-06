@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Pablo
+apellido: Jesus
 ---
 TP: While_validaciones_rising_btl
 ---
@@ -48,13 +48,40 @@ class App(customtkinter.CTk):
         self.label3 = customtkinter.CTkLabel(master=self, text="Legajo")
         self.label3.grid(row=3, column=0, padx=20, pady=10)
         self.txt_legajo = customtkinter.CTkEntry(master=self)
-        self.txt_legajo.grid(row=3, column=1)
-
+        self.txt_legajo.grid(row=32, column=1)
+        
         self.btn_validar = customtkinter.CTkButton(
             master=self, text="Validar", command=self.btn_validar_on_click)
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
+        self.txt_apellido.delete(0,100)
+        self.txt_edad.delete(0,100)
+        self.txt_legajo.delete(0,100)
+        flagapellido = True
+        flagedad = True
+        flagestado = True
+        flaglegajo = True
+        while (flagapellido==True):
+            apellido = prompt(title="Apellido", prompt="Ingrese apellido: ")
+            if(apellido!=None and apellido!=""):
+                flagapellido=False
+        while (flagestado==True):
+            estado = prompt(title="Estado civil", prompt="Ingrese estado civil: ")
+            if(estado=="Soltero/a" or estado=="Casado/a" or estado=="Divorciado/a" or estado == "Viudo/a"):
+                flagestado=False
+        while (flagedad==True):
+            edad = prompt(title="Edad", prompt="Ingrese edad: ")
+            if(int(edad) >= 18 and int(edad) <= 90):
+                flagedad=False
+        while (flaglegajo==True):
+            legajo = prompt(title="Legajo", prompt="Ingrese numero de legajo: ")
+            if(int(legajo)>=1000 and int(legajo)<=9999):
+                flaglegajo=False
+        self.txt_apellido.insert(0,apellido)
+        self.txt_edad.insert(0,edad)
+        self.txt_legajo.insert(0,legajo)
+        self.combobox_tipo.set(estado)
         pass
 
 

@@ -5,12 +5,12 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Pablo
+apellido: Jesus
 ---
 Ejercicio: entrada_salida_03
 ---
-Enunciado:
+Enunciado:  
 Al presionar el botón  'Mostrar', se deberá obtener el contenido de la caja de texto para luego 
 mostrarlo utilizando el Dialog Alert
 '''
@@ -34,6 +34,8 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
+        valor=self.txt_nombre.get()
+        alert(title="Valor ingresado", message="Usted ingreso el valor: "+valor)
         pass
                 
     
