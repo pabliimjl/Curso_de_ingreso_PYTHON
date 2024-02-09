@@ -52,19 +52,39 @@ class App(customtkinter.CTk):
         self.btn_total_iva.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_total_on_click(self):
-        subtotal=int(self.txt_importe_1.get()) + int(self.txt_importe_2.get()) + int(self.txt_importe_3.get())
-        alert(title="Subtotal", message="El subtotal es: $" + str(subtotal))
-        pass
+        importe_1_str = self.txt_importe_1.get()
+        importe_2_str = self.txt_importe_2.get()
+        importe_3_str = self.txt_importe_3.get()
+        importe_1 = int(importe_1_str)
+        importe_2 = int(importe_2_str)
+        importe_3 = int(importe_3_str)
+        subtotal = importe_1 + importe_2 + importe_3
+        resultado = f"El subtotal es de: {subtotal}"
+        alert("Subtotal", resultado)
 
     def btn_promedio_on_click(self):
-        promedio=(int(self.txt_importe_1.get()) + int(self.txt_importe_2.get()) + int(self.txt_importe_3.get()))/3
-        alert(title="Subtotal", message="El promedio es: $" + str(promedio))
-        pass
+        importe_1_str = self.txt_importe_1.get()
+        importe_2_str = self.txt_importe_2.get()
+        importe_3_str = self.txt_importe_3.get()
+        importe_1 = int(importe_1_str)
+        importe_2 = int(importe_2_str)
+        importe_3 = int(importe_3_str)
+        promedio = (importe_1 + importe_2 + importe_3) / 3
+        resultado= f"El promedio es de $ {promedio}"
+        alert("Promedio", resultado)
 
     def btn_total_iva_on_click(self):
-        total=(int(self.txt_importe_1.get()) + int(self.txt_importe_2.get()) + int(self.txt_importe_3.get()))*1.21
-        alert(title="Subtotal", message="El total con impuestos es: $" + str(total))
-        pass      
+        importe_1_str = self.txt_importe_1.get()
+        importe_2_str = self.txt_importe_2.get()
+        importe_3_str = self.txt_importe_3.get()
+        importe_1 = int(importe_1_str)
+        importe_2 = int(importe_2_str)
+        importe_3 = int(importe_3_str)
+        subtotal = importe_1 + importe_2 + importe_3
+        iva = subtotal / 100 * 21
+        total = subtotal + iva
+        resultado = f"El total es de: {total}"
+        alert("Total", resultado)
     
 if __name__ == "__main__":
     app = App()

@@ -34,9 +34,9 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        valor=self.txt_nombre.get()
-        alert(title="Valor ingresado", message="Usted ingreso el valor: "+valor)
-        pass
+        valor = self.txt_nombre.get()
+        resultado = f"Usted ingreso el valor: {valor}"
+        alert("Valor ingresado", resultado)
                 
     
 if __name__ == "__main__":

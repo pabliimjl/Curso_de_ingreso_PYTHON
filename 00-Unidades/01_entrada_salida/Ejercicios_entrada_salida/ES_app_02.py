@@ -27,9 +27,9 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        valor = prompt(title="Por favor:", prompt="Ingrese un valor")
-        alert(title="Valor ingresado", message=("El valor ingresado fue: "+valor))
-        pass
+        valor = prompt("Por favor:", "Ingrese un valor")
+        resultado = f"El valor ingresado fue: {valor}"
+        alert("Valor ingresado", resultado)
         
         
     

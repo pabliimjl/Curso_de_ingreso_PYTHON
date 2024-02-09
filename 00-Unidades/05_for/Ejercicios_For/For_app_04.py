@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Pablo
+apellido: Jesus
 ---
 Ejercicio: for_04
 ---
@@ -26,7 +26,11 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        for i in range(0,10,1):
+            numero = prompt("Ingrese numero", "Ingrese numero (ingrese 9 para detener)")
+            if (numero == "9"):
+                break
+            alert("Numero ingresado", numero)
         
     
 if __name__ == "__main__":
