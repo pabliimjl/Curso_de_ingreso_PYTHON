@@ -27,8 +27,9 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        alert(message="Numero aleatorio entre 1 y 10: " + str(random.randint(1,10)))
-        pass
+        numerorandom = random.randint(1,10)
+        alert("UTN", f"Numero aleatorio entre 1 y 10: {numerorandom}")
+
         
 
 if __name__ == "__main__":

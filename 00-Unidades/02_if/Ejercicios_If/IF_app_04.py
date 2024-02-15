@@ -34,14 +34,14 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        edad=int(self.txt_edad.get())
-        if(edad<13):
-            alert(title="Niño", message="Usted es un niño.")
-        elif(edad<18):
-            alert(title="Adolescente", message="Usted es un adolescente.")
+        edad = self.txt_edad.get()
+        edad = int (edad)
+        if(edad < 13):
+            alert("Niño", "Usted es un niño.")
+        elif(edad < 18):
+            alert("Adolescente", "Usted es un adolescente.")
         else:
-            alert(title="Adulto", message="Ya estas viejito!")
-        pass
+            alert("Adulto", "Usted es un adulto")
 
 
 if __name__ == "__main__":

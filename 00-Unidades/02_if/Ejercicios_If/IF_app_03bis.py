@@ -33,15 +33,15 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        altura=int(self.txt_altura.get())
-        if(altura>=180):
-            alert(title="Es pivot", message="Usted ha sido elegido como pivot.")
+        altura = self.txt_altura.get()
+        altura = int(altura)
+        if(altura >= 180):
+            alert("Es pivot", "Usted ha sido elegido como pivot.")
         else:
-            alert(title="No es pivot", message="A tomar danonino, pichon!")
-        pass
+            alert("No es pivot", "Usted no ha sido elegido como pivot.")
 
 
 if __name__ == "__main__":
     app = App()
-    app.geometry("300x300")
+    app.geometry("300x300")01
     app.mainloop()

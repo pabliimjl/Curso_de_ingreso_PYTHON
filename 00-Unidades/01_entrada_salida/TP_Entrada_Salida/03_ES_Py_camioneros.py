@@ -42,19 +42,22 @@ class App(customtkinter.CTk):
         self.btn_cantidad_camiones = customtkinter.CTkButton(master=self, text="Calcular cantidad de camiones", command=self.btn_cantidad_camiones_on_click)
         self.btn_cantidad_camiones.grid(row=3, pady=10, padx=30 ,columnspan=2, sticky="nsew")
         
-        self.btn_tiempo_llegada = customtkinter.CTkButton(master=self, text="Calcular tiempo de llegada", command=self.btn_tiempo_llegada_on_click)
+        self.btn_tiempo_llegada = customtkinter.CTkButtson(master=self, text="Calcular tiempo de llegada", command=self.btn_tiempo_llegada_on_click)
         self.btn_tiempo_llegada.grid(row=4, pady=10, padx=30, columnspan=2, sticky="nsew")
     
     def btn_cantidad_camiones_on_click(self):
-        toneladas_str = self.txt_toneladas.get()
-        toneladas = int(toneladas_str)
-        camiones = int(toneladas/3.5) + 1
+        toneladas = self.txt_toneladas.get()
+        toneladas = float(toneladas)
+        camiones = toneladas/3.5
+        if camiones % 1 > 0:
+            camiones += 1
+        camiones = int(camiones)
         resultado = f"Se necesitan {camiones} camiones para llevar la carga total de {toneladas} toneladas."
         alert("Cantidad de camiones", resultado)
 
     def btn_tiempo_llegada_on_click(self):
-        kilometros_str = self.txt_kilometros.get()
-        kilometros = int(kilometros_str)
+        kilometros = self.txt_kilometros.get()
+        kilometros = int(kilometros)
         horas = kilometros / 90
         resultado = f"El camion tardara {horas} horas en recorrer la distancia de {kilometros} kilometros."
         alert("Cantidad de horas", resultado)

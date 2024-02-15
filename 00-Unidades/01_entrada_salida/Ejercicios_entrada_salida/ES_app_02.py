@@ -31,7 +31,6 @@ class App(customtkinter.CTk):
         resultado = f"El valor ingresado fue: {valor}"
         alert("Valor ingresado", resultado)
         
-        
     
 if __name__ == "__main__":
     app = App()

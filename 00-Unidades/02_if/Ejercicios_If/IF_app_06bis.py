@@ -39,16 +39,16 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        altura=int(self.txt_altura.get())
-        if(altura<160):
-            alert(title="Es base", message="Usted ha sido elegido como base.")
-        elif(altura<180):
-            alert(title="Es escolta", message="Usted ha sido elegido como escolta.")
-        elif(altura<200):
-            alert(title="Es alero", message="Usted ha sido elegido como alero.")
+        altura = self.txt_altura.get()
+        altura = int(altura)
+        if(altura < 160):
+            alert("Es base", "Usted ha sido elegido como base.")
+        elif(altura < 180):
+            alert("Es escolta", "Usted ha sido elegido como escolta.")
+        elif(altura < 200):
+            alert("Es alero", "Usted ha sido elegido como alero.")
         else:
-            alert(title="Es pivot", message="Usted ha sido elegido como pivot.")
-        pass
+            alert("Es pivot", "Usted ha sido elegido como pivot.")
 
         
         

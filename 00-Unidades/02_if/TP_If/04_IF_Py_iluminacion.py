@@ -43,30 +43,31 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        cantidad=int(self.combobox_cantidad.get())
-        marca=self.combobox_marca.get()
-        if(cantidad>=6):
-            subtotal=cantidad*800*0.5
-        elif(cantidad==5 and marca == "ArgentinaLuz"):
-            subtotal=cantidad*800*0.6
-        elif(cantidad==5):
-            subtotal=cantidad*800*0.7
-        elif(cantidad==4 and (marca =="ArgentinaLuz" or marca=="FelipeLamparas")):
-           subtotal=cantidad*800*0.75
-        elif(cantidad==4):
-            subtotal=cantidad*800*0.8
-        elif(cantidad==3 and marca=="ArgentinaLuz"):
-            subtotal=cantidad*800*0.85
-        elif(cantidad==3 and marca=="FelipeLamparas"):
-            subtotal=cantidad*800*0.9
-        elif(cantidad==3):
-            subtotal=cantidad*800*0.95
+        preciounitario = 800
+        cantidad = self.combobox_cantidad.get()
+        cantidad= int(cantidad)
+        marca = self.combobox_marca.get()
+        if(cantidad >= 6):
+            subtotal = cantidad * preciounitario * 0.5
+        elif(cantidad == 5 and marca == "ArgentinaLuz"):
+            subtotal = cantidad * preciounitario * 0.6
+        elif(cantidad == 5):
+            subtotal = cantidad * preciounitario * 0.7
+        elif(cantidad == 4 and (marca == "ArgentinaLuz" or marca == "FelipeLamparas")):
+           subtotal = cantidad * preciounitario * 0.75
+        elif(cantidad == 4):
+            subtotal = cantidad * preciounitario * 0.8
+        elif(cantidad == 3 and marca == "ArgentinaLuz"):
+            subtotal = cantidad * preciounitario * 0.85
+        elif(cantidad == 3 and marca == "FelipeLamparas"):
+            subtotal = cantidad * preciounitario * 0.9
+        elif(cantidad == 3):
+            subtotal = cantidad * preciounitario * 0.95
         else:
-            subtotal=cantidad*800
-        if(subtotal>=4000):
-            subtotal=cantidad*800*0.45
-        alert(title="Total", message="El total de su compra es de $" + str(subtotal))
-        pass
+            subtotal = cantidad * preciounitario
+        if(subtotal >= 4000):
+            subtotal = cantidad * preciounitario * 0.45
+        alert( "Total", f"El total de su compra es de ${subtotal}")
         
     
 if __name__ == "__main__":

@@ -52,34 +52,34 @@ class App(customtkinter.CTk):
         self.btn_total_iva.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_total_on_click(self):
-        importe_1_str = self.txt_importe_1.get()
-        importe_2_str = self.txt_importe_2.get()
-        importe_3_str = self.txt_importe_3.get()
-        importe_1 = int(importe_1_str)
-        importe_2 = int(importe_2_str)
-        importe_3 = int(importe_3_str)
+        importe_1 = self.txt_importe_1.get()
+        importe_2 = self.txt_importe_2.get()
+        importe_3 = self.txt_importe_3.get()
+        importe_1 = int(importe_1)
+        importe_2 = int(importe_2)
+        importe_3 = int(importe_3)
         subtotal = importe_1 + importe_2 + importe_3
         resultado = f"El subtotal es de: {subtotal}"
         alert("Subtotal", resultado)
 
     def btn_promedio_on_click(self):
-        importe_1_str = self.txt_importe_1.get()
-        importe_2_str = self.txt_importe_2.get()
-        importe_3_str = self.txt_importe_3.get()
-        importe_1 = int(importe_1_str)
-        importe_2 = int(importe_2_str)
-        importe_3 = int(importe_3_str)
+        importe_1 = self.txt_importe_1.get()
+        importe_2 = self.txt_importe_2.get()
+        importe_3 = self.txt_importe_3.get()
+        importe_1 = int(importe_1)
+        importe_2 = int(importe_2)
+        importe_3 = int(importe_3)
         promedio = (importe_1 + importe_2 + importe_3) / 3
         resultado= f"El promedio es de $ {promedio}"
         alert("Promedio", resultado)
 
     def btn_total_iva_on_click(self):
-        importe_1_str = self.txt_importe_1.get()
-        importe_2_str = self.txt_importe_2.get()
-        importe_3_str = self.txt_importe_3.get()
-        importe_1 = int(importe_1_str)
-        importe_2 = int(importe_2_str)
-        importe_3 = int(importe_3_str)
+        importe_1 = self.txt_importe_1.get()
+        importe_2 = self.txt_importe_2.get()
+        importe_3 = self.txt_importe_3.get()
+        importe_1 = int(importe_1)
+        importe_2 = int(importe_2)
+        importe_3 = int(importe_3)
         subtotal = importe_1 + importe_2 + importe_3
         iva = subtotal / 100 * 21
         total = subtotal + iva

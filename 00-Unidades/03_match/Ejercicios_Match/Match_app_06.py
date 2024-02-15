@@ -40,17 +40,16 @@ class App(customtkinter.CTk):
     
     def btn_informar_on_click(self):
         hora = self.txt_hora.get()
+        hora = int(hora)
         match (hora):
-            case "0"|"1"|"2"|"3"|"4"|"5"|"6"|"20"|"21"|"22"|"23"|"24":
-                alert(title="Noche", message="Es de noche")
-            case "7"|"8"|"9"|"10"|"11":
-                alert(title="Mañana", message="Es de mañana")
-            case "12"|"13"|"14"|"15"|"16"|"17"|"18"|"19":
-                alert(title="Tarde", message="Es de tarde")
+            case 0 | 1 | 2 | 3 | 4 | 5 | 6 | 20 | 21 | 22 | 23 | 24:
+                alert("Noche", "Es de noche")
+            case  7 | 8 | 9 | 10 | 11:
+                alert("Mañana", "Es de mañana")
+            case  12 | 13 | 14 | 15 | 16 | 17 | 18 | 19:
+                alert("Tarde", "Es de tarde")
             case _:
-                alert(title="Hora invalida", message="La hora no existe, el dia tiene 24 horas campeon!")
-        pass
-    
+                alert("Hora invalida", "La hora no existe, el dia tiene 24 horas campeon!")    
     
 if __name__ == "__main__":
     app = App()

@@ -49,44 +49,44 @@ class App(customtkinter.CTk):
         self.btn_dividir.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_sumar_on_click(self):
-        operador_a_str = self.txt_operador_a.get()  #Obtengo los datos
-        operador_b_str = self.txt_operador_b.get() 
+        operador_a = self.txt_operador_a.get()  #Obtengo los datos
+        operador_b = self.txt_operador_b.get() 
 
-        operador_a = int(operador_a_str)    #Parseo los datos de str a int
-        operador_b = int(operador_b_str)
+        operador_a = int(operador_a)    #Parseo los datos de str a int
+        operador_b = int(operador_b)
 
         suma = operador_a + operador_b
         resultado = f"El resultado de la suma es: {suma}"
         alert("Suma",resultado)
 
     def btn_restar_on_click(self):
-        operador_a_str = self.txt_operador_a.get()  #Obtengo los datos
-        operador_b_str = self.txt_operador_b.get() 
+        operador_a = self.txt_operador_a.get()  #Obtengo los datos
+        operador_b = self.txt_operador_b.get() 
 
-        operador_a = int(operador_a_str)    #Parseo los datos de str a int
-        operador_b = int(operador_b_str)
+        operador_a = int(operador_a)    #Parseo los datos de str a int
+        operador_b = int(operador_b)
 
         resta = operador_a - operador_b
         resultado = f"El resultado de la resta es: {resta}"
         alert("Resta",resultado)
 
     def btn_multiplicar_on_click(self):
-        operador_a_str = self.txt_operador_a.get()  #Obtengo los datos
-        operador_b_str = self.txt_operador_b.get() 
+        operador_a = self.txt_operador_a.get()  #Obtengo los datos
+        operador_b = self.txt_operador_b.get() 
 
-        operador_a = int(operador_a_str)    #Parseo los datos de str a int
-        operador_b = int(operador_b_str)
+        operador_a = int(operador_a)    #Parseo los datos de str a int
+        operador_b = int(operador_b)
 
         multiplicacion = operador_a * operador_b
         resultado = f"El resultado de la multiplicacion es: {multiplicacion}"
         alert("Multiplicacion",resultado)
 
     def btn_dividir_on_click(self):
-        operador_a_str = self.txt_operador_a.get()  #Obtengo los datos
-        operador_b_str = self.txt_operador_b.get() 
+        operador_a = self.txt_operador_a.get()  #Obtengo los datos
+        operador_b = self.txt_operador_b.get() 
 
-        operador_a = int(operador_a_str)    #Parseo los datos de str a int
-        operador_b = int(operador_b_str)
+        operador_a = int(operador_a)    #Parseo los datos de str a int
+        operador_b = int(operador_b)
 
         division = operador_a / operador_b
         resultado = f"El resultado de la division es: {division}"

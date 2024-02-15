@@ -27,7 +27,6 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         alert ("Primer Programa" ,"Esto no anda, funciona" )
-        pass
 
 
 if __name == "__main":

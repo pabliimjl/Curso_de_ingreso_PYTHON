@@ -40,10 +40,10 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        operador_a_str = self.txt_operador_a.get()
-        operador_b_str = self.txt_operador_b.get()
-        operador_a = int(operador_a_str)
-        operador_b = int(operador_b_str)
+        operador_a = self.txt_operador_a.get()
+        operador_b = self.txt_operador_b.get()
+        operador_a = int(operador_a)
+        operador_b = int(operador_b)
         resto = operador_a % operador_b
         resultado = f"El resto de dividir {operador_a} por {operador_b} es : {resto}"
         alert("Suma", resultado)
