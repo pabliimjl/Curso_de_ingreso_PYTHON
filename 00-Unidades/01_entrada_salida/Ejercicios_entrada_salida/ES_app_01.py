@@ -8,10 +8,29 @@ import customtkinter
 nombre: Pablo
 apellido: Jesus
 ---
-Ejercicio: entradasalida01
----
-Enunciado:
-Al presionar el  botón, se debe mostrar un mensaje como el siguiente "Esto no anda, funciona".
+Simulacro Turno Noche
+
+Un famoso casino de mar del plata,  requiere una app para controlar el egreso de dinero durante una jornada. Para ello se ingresa por cada ganador:
+
+Nombre
+
+Importe ganado (mayor o igual $1000)
+
+Género (“Femenino”, “Masculino”, “Otro”)
+
+Juego (Ruleta, Poker, Tragamonedas)
+
+Necesitamos saber:
+
+Nombre y género de la persona que más ganó.
+
+Promedio de dinero ganado en Ruleta.
+
+Porcentaje de personas que jugaron en el Tragamonedas.
+
+Cuál es el juego menos elegido por los ganadores.
+
+El nombre del jugador que ganó más dinero jugando Poker
 '''
 
 class App(customtkinter.CTk):
@@ -26,10 +45,14 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        alert ("Primer Programa" ,"Esto no anda, funciona" )
+        
+        while True:
+            nombre = input("Ingrese su nombre")
+            if nombre == None:
+                break
 
 
-if __name == "__main":
+if __name__ == "__main":
     app = App()
     app.geometry("300x300")
     app.mainloop()

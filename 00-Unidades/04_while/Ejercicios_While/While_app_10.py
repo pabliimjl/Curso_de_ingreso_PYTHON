@@ -37,29 +37,41 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        flag=True
-        sumap=0
-        suman=0
-        contadorp=0
-        contadorn=0
-        contadorc=0
-        while(flag):
-            numero = prompt(title="Numero", prompt="Ingrese numeros hasta que usted desee: ", initialvalue="0")
-            if(numero==None):
-                flag=False
-            elif(numero=="0"):
-                contadorc+=1
-            elif(int(numero)<0):
-                suman+=int(numero)
-                contadorn+=1
+        suma_positivos = 0
+        suma_negativos = 0
+        cantidad_positivos = 0
+        cantidad_negativos = 0
+        cantidad_ceros = 0
+
+        while True:
+            numero = prompt("UTN", "Ingrese un numero: ")
+            if numero == None:
+                break
+
+            numero = int(numero)
+
+            if numero > 0:
+                suma_positivos += numero
+                cantidad_positivos += 1
+            elif numero < 0:
+                suma_negativos += numero
+                cantidad_negativos += 1
             else:
-                sumap+=int(numero)
-                contadorp+=1
-        alert(title="Resultados", message="Suma acumuladada de negativos: " + str(suman) +
-              "\nSuma acumulada de positivos: " + str(sumap)+"\nCantidad de numeros positivos ingresados: " + str(contadorp) +
-              "\nCantidad de numeros negativos ingresados: " + str(contadorn) + "\nCantidad de ceros: " + str(contadorc) + 
-              "\nDiferencia entre positivos y negativos: " + str(contadorp-contadorn))
-        pass
+                cantidad_ceros  += 1
+
+        diferencia = cantidad_negativos - cantidad_positivos
+        if diferencia < 0:
+            diferencia *= -1
+        resultado = (f"La suma acumulada de los negativos es: {suma_negativos} \nLa suma acumulada de los positivos es: {suma_positivos} "
+        f"\nLa cantidad de numeros positivos ingresados es: {cantidad_positivos} "
+        f"\nLa cantidad de numeros negativos ingresados es: {cantidad_negativos} "
+        f"\nLa cantidad de ceros ingresados es: {cantidad_ceros} "
+        f"\nLa diferencia entre la cantidad de numeros positivos ingresados y los negativos es: {diferencia}")
+
+        
+        alert("UTN", resultado)
+
+
 
     
 if __name__ == "__main__":

@@ -30,7 +30,9 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        lista = ["Hola", "soy", "una", "lista"]
+        for valor in range(len(lista)):
+            print (valor)
         
         
     
